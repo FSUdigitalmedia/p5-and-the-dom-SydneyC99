@@ -1,17 +1,43 @@
-var myParagraph;
+let myParagraph;
+let button;
+let panda;
+let button2;
+let slider;
+
 
 function setup() {
-  myParagraph = createP("html");
+  myParagraph = createP("red");
   myParagraph.position(0, 0);
-  myParagraph.mouseClicked(makeRed);
+  myParagraph.mousePressed(makeRed);
+  button = createButton("red");
+  button.mousePressed(makeRed); //this fixes makeRed so it works again
+  panda = createImg("/assets/panda.png", "This is a panda");
+  panda.size(80, 80);
+  panda.position(20, 20);
+  button2 = createButton("move panda");
+  button2.mousePressed (movePanda);
+  slider = createSlider(1, 100, 50,);
+  panda.doubleClicked(hideText);
+
 }
 
 function draw() {
-  myParagraph.position(frameCount % 200, 0);
+  myParagraph.position(mouseX, mouseY);
+  //this seems to stop makeRed because you can't hit the
+  //text itself
+  myParagraph.style("font-size", slider.value()+"px");
 }
 
 function makeRed() {
   myParagraph.style("color", "red");
+}
+
+function movePanda() {
+   panda.position(random(20, 100), random(20, 100));
+}
+
+function hideText() {
+   myParagraph.hide();
 }
 
 /*
