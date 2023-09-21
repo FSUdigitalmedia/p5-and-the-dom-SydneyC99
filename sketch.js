@@ -17,6 +17,7 @@ function setup() {
   button2 = createButton("move panda");
   button2.mousePressed (movePanda);
   slider = createSlider(1, 100, 50,);
+  slider.addClass("sliderCSS");
   panda.doubleClicked(hideText);
 
 }

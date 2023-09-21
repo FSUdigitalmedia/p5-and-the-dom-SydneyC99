@@ -1,4 +1,8 @@
 p {
   font-size: xx-large;
-  /*look up how to move the slider in css.*/
+}
+.sliderCSS {
+  width: 400px;
+  height: auto;
+  rotate: 30deg;
 }
